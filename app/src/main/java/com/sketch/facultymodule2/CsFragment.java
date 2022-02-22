@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -125,18 +126,18 @@ public class CsFragment extends Fragment {
             public void onClick(View v) {
 
                 String D1 = rbCs.getText().toString();
-                String D2 = rbIt.getText().toString();
+//                String D2 = rbIt.getText().toString();
 
                 students.setStudentName(iledtName.getText().toString().trim());
                 students.setRollNo(iledtRollno.getText().toString().trim());
 
-                if(rbCs.isChecked()){
+                if(rbCs.isChecked()) {
                     students.setDepartment(D1);
-
-
-                }else{
-                    students.setDepartment(D2);
                 }
+
+//                }else{
+//                    students.setDepartment(D2);
+//                }
                 String Y1 = rb1yr.getText().toString();
                 String Y2= rb2yr.getText().toString();
                 String Y3= rb3yr.getText().toString();
@@ -162,7 +163,7 @@ public class CsFragment extends Fragment {
                     students.setBatches(B2);
                 }
                 reference.push().setValue(students);
-//                Toast.makeText(AddStudentsActivity.this, "Student Added", Toast.LENGTH_SHORT).show();
+             Toast.makeText(getActivity(), "Student Added", Toast.LENGTH_SHORT).show();
             }
         });
         // Add the Listener to the Submit Button

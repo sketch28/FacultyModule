@@ -29,7 +29,7 @@ public class ITFragment extends Fragment {
     private TextInputEditText iledtName,iledtRollno;
     DatabaseReference reference;
     FirebaseDatabase firebaseDatabase;
-    public Students students;
+    public Student_IT students_IT;
 
     private View ITView;
 
@@ -67,7 +67,7 @@ public class ITFragment extends Fragment {
         ilRollno = (TextInputLayout) ITView.findViewById(R.id.tLayoutRollNo);
         iledtName = (TextInputEditText) ITView.findViewById(R.id.TIedtName);
         iledtRollno = (TextInputEditText) ITView.findViewById(R.id.TIedtRollNo);
-        students = new Students();
+        students_IT = new Student_IT();
         reference = FirebaseDatabase.getInstance().getReference().child("Students_it");
 
 
@@ -124,45 +124,41 @@ public class ITFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                String D1 = rbCs.getText().toString();
-                String D2 = rbIt.getText().toString();
+                String D1 = rbIt.getText().toString();
 
-                students.setStudentName(iledtName.getText().toString().trim());
-                students.setRollNo(iledtRollno.getText().toString().trim());
+                students_IT.setStudentName_IT(iledtName.getText().toString().trim());
+                students_IT.setRollNo_IT(iledtRollno.getText().toString().trim());
 
-                if(rbCs.isChecked()){
-                    students.setDepartment(D1);
+                if(rbIt.isChecked()){
+                    students_IT.setDepartment_IT(D1);
 
-
-                }else{
-                    students.setDepartment(D2);
                 }
                 String Y1 = rb1yr.getText().toString();
                 String Y2= rb2yr.getText().toString();
                 String Y3= rb3yr.getText().toString();
                 String Y4= rb4yr.getText().toString();
                 if(rb1yr.isChecked()){
-                    students.setYears(Y1);
+                    students_IT.setYears_IT(Y1);
                 }
                 else if(rb2yr.isChecked()){
-                    students.setYears(Y2);
+                    students_IT.setYears_IT(Y2);
                 }
                 else if(rb3yr.isChecked()){
-                    students.setYears(Y3);
+                    students_IT.setYears_IT(Y3);
                 }else
                 {
-                    students.setYears(Y4);
+                    students_IT.setYears_IT(Y4);
                 }
                 String B1 = rb1batch.getText().toString();
                 String B2 = rb2batch.getText().toString();
                 if(rb1batch.isChecked()){
-                    students.setBatches(B1);
+                    students_IT.setBatches_IT(B1);
                 }
                 else{
-                    students.setBatches(B2);
+                    students_IT.setBatches_IT(B2);
                 }
-                reference.push().setValue(students);
-//                Toast.makeText(AddStudentsActivity.this, "Student Added", Toast.LENGTH_SHORT).show();
+                reference.push().setValue(students_IT);
+           Toast.makeText(getActivity(), "Student Added", Toast.LENGTH_SHORT).show();
             }
         });
         // Add the Listener to the Submit Button
