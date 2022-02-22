@@ -37,29 +37,30 @@ public class CsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        btnAddStudents = (Button) getView().findViewById(R.id.add_students_rb);
-        btnClear = (Button) getView().findViewById(R.id.btn_clear_rb);
-        radioGroupDepartment = (RadioGroup) getView().findViewById(R.id.gr_Department);
-        radioGroupYears = (RadioGroup) getView().findViewById(R.id.gr_Years);
-        radioGroupBatches = (RadioGroup) getView().findViewById(R.id.gr_batches);
+
+        btnAddStudents = (Button) getView().findViewById(R.id.add_students_rb_cs);
+        btnClear = (Button) getView().findViewById(R.id.btn_clear_rb_cs);
+        radioGroupDepartment = (RadioGroup) getView().findViewById(R.id.gr_Department_cs);
+        radioGroupYears = (RadioGroup) getView().findViewById(R.id.gr_Years_cs);
+        radioGroupBatches = (RadioGroup) getView().findViewById(R.id.gr_batches_cs);
         //Department
         rbCs = (RadioButton) getView().findViewById(R.id.rb_CS);
 //        rbIt = (RadioButton) getView().findViewById(R.id.rb_IT);
         //Years
-        rb1yr = (RadioButton) getView(). findViewById(R.id.rb_first_year);
-        rb2yr = (RadioButton) getView().findViewById(R.id.rb_second_year);
-        rb3yr = (RadioButton)getView(). findViewById(R.id.rb_third_year);
-        rb4yr = (RadioButton) getView().findViewById(R.id.rb_fourth_year);
+        rb1yr = (RadioButton) getView(). findViewById(R.id.rb_first_year_cs);
+        rb2yr = (RadioButton) getView().findViewById(R.id.rb_second_year_cs);
+        rb3yr = (RadioButton)getView(). findViewById(R.id.rb_third_year_cs);
+        rb4yr = (RadioButton) getView().findViewById(R.id.rb_fourth_year_cs);
         //Batches
-        rb1batch = (RadioButton) getView().findViewById(R.id.rb_first_batch);
-        rb2batch = (RadioButton) getView().findViewById(R.id.rb_second_batch);
+        rb1batch = (RadioButton) getView().findViewById(R.id.rb_first_batch_cs);
+        rb2batch = (RadioButton) getView().findViewById(R.id.rb_second_batch_cs);
 
-        ilName = (TextInputLayout) getView().findViewById(R.id.tLayoutName);
-        ilRollno = (TextInputLayout) getView().findViewById(R.id.tLayoutRollNo);
-        iledtName = (TextInputEditText) getView().findViewById(R.id.TIedtName);
-        iledtRollno = (TextInputEditText) getView().findViewById(R.id.TIedtRollNo);
+        ilName = (TextInputLayout) getView().findViewById(R.id.tLayoutName_cs);
+        ilRollno = (TextInputLayout) getView().findViewById(R.id.tLayoutRollNo_cs);
+        iledtName = (TextInputEditText) getView().findViewById(R.id.TIedtName_cs);
+        iledtRollno = (TextInputEditText) getView().findViewById(R.id.TIedtRollNo_cs);
         students = new Students();
-        reference = FirebaseDatabase.getInstance().getReference().child("Students");
+        reference = FirebaseDatabase.getInstance().getReference().child("Students_cs");
 
 
         radioGroupDepartment.clearCheck();
