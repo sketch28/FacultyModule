@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:strokeWidth="10dp"
+    app:strokeColor="@color/black"
+    android:layout_height="80dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView2"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_margin="5dp"
+        android:outlineAmbientShadowColor="@color/lightskyblue"
+        android:outlineSpotShadowColor="@color/lightskyblue"
+        app:strokeWidth="1.5dp"
+        app:strokeColor="@color/lightskyblue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/sName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Vipul Jatanna"
+                        android:layout_marginEnd="10dp"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/sRollno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-1dp"
+                        android:text="01"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/sDepart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="CS"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/sBatch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="1st"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/sYear"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="1st Yr"
+                        android:textColor="#000"
+                        />
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="287dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/labelAbsent"
+            app:layout_constraintStart_toStartOf="@+id/labelAbsent">
+
+
+            <RadioGroup
+                android:id="@+id/rgAttendance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                  <RadioButton
+                    android:id="@+id/rbPresent"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="8dp"
+                      android:text="P"
+                    android:textColor="@android:color/white"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <RadioButton
+                    android:id="@+id/rbAbsent"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="A"
+                    android:layout_marginLeft="25dp"
+                    android:textColor="@android:color/white"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

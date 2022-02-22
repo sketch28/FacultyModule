@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "777717877844",
+    "project_id": "facultymodule2",
+    "storage_bucket": "facultymodule2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777717877844:android:ee496d2c7b85d1308271c1",
+        "android_client_info": {
+          "package_name": "com.sketch.facultymodule2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777717877844-msp8f7btr8de3g2bjlu1ovkn5icoksku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCacXwu8XDbhUctq5e-hdB02EhC1PXuLI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777717877844-msp8f7btr8de3g2bjlu1ovkn5icoksku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
