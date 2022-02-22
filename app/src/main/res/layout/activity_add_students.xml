@@ -6,182 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".AddStudentsActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/viewPager2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tLayoutName"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="8dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/TIedtName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Student's Name"
-                 />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tLayoutRollNo"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="8dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/TIedtRollNo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/ic_baseline_cancel_24"
-                android:hint="Enter Student's Roll No"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <RadioGroup
-            android:id="@+id/gr_Department"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="50dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Department"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-            <RadioButton
-                android:id="@+id/rb_CS"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Comp.Sci."
-                android:textSize="15dp" />
-
-            <RadioButton
-                android:id="@+id/rb_IT"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Info.Tech."
-                android:textSize="15dp" />
-
-
-        </RadioGroup>
-        <TextView
+        <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Years"
-            android:textColor="@color/black"
-            android:layout_marginLeft="10dp"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-        <RadioGroup
-            android:id="@+id/gr_Years"
+            android:text="Computer Science" />
+
+        <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="45dp">
+            android:text="Info.Tech" />
 
-            <RadioButton
-                android:id="@+id/rb_first_year"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1st"
-                android:textSize="15dp"
-                android:textStyle="bold"/>
 
-            <RadioButton
-                android:id="@+id/rb_second_year"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2nd"
-                android:layout_marginLeft="10dp"
-                android:textSize="15dp"
-                android:textStyle="bold"/>
+    </com.google.android.material.tabs.TabLayout>
 
-            <RadioButton
-                android:id="@+id/rb_third_year"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3rd"
-                android:layout_marginLeft="10dp"
-                android:textSize="15dp"
-                android:textStyle="bold"/>
-
-            <RadioButton
-                android:id="@+id/rb_fourth_year"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4th"
-                android:layout_marginLeft="7dp"
-                android:textSize="15dp"
-                android:textStyle="bold"/>
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Batches"
-            android:textColor="@color/black"
-            android:layout_marginLeft="10dp"
-            android:textSize="20dp"
-
-            android:textStyle="bold" />
-        <RadioGroup
-            android:id="@+id/gr_batches"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="4dp">
-
-        <RadioButton
-            android:id="@+id/rb_first_batch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1st"
-            android:textSize="15dp"
-            android:textStyle="bold"/>
-
-        <RadioButton
-            android:id="@+id/rb_second_batch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2nd"
-            android:layout_marginLeft="10dp"
-            android:textSize="15dp"
-            android:textStyle="bold"/>
-        </RadioGroup>
-
-        <Button
-            android:id="@+id/add_students_rb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="Add Student"
-            android:layout_gravity="center"/>
-        <Button
-            android:id="@+id/btn_clear_rb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Clear"
-            android:layout_gravity="center"/>
-
-    </LinearLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
