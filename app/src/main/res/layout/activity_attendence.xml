@@ -4,108 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AttendenceActivity">
+    tools:context=".AddStudentsActivity">
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="156dp"
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout_attendence"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/viewPager2_attendence"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/labelName"
+        <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
-            android:textColor="#000"
-            android:textStyle="bold" />
+            android:text="Computer Science" />
 
-        <TextView
-            android:id="@+id/lableRollNo"
+        <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:text="Roll No"
-            android:textColor="#000"
-
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/labelDepart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:text="Department"
-            android:textColor="#000"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/labelBatch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:text="Batch"
-            android:textColor="#000"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/labelYear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:text="Year"
-            android:textColor="#000"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/labelPresent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:text="Present"
-            android:textColor="#000"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/labelAbsent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_marginLeft="12dp"
-            android:text="Absent"
-            android:textColor="#000"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+            android:text="Info.Tech" />
 
 
-    </LinearLayout>
+    </com.google.android.material.tabs.TabLayout>
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/lvStudents"
-        android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:layout_marginTop="195dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <Button
-        android:id="@+id/btnSaveAttendance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="48dp"
-        android:text="Save"
-        android:textColor="#fff"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager2_attendence"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lvStudents" />
-
-
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout_attendence" />
 </androidx.constraintlayout.widget.ConstraintLayout>

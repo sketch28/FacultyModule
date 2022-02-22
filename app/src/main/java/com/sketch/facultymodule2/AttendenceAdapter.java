@@ -74,8 +74,8 @@ public class AttendenceAdapter extends RecyclerView.Adapter<AttendenceAdapter.My
             sDepartment = itemView.findViewById(R.id.sDepart);
             sBatch = itemView.findViewById(R.id.sBatch);
             sYear = itemView.findViewById(R.id.sYear);
-            sPresent = itemView.findViewById(R.id.labelPresent);
-            sAbsent = itemView.findViewById(R.id.labelAbsent);
+            sPresent = itemView.findViewById(R.id.labelPresent_cs_attendence);
+            sAbsent = itemView.findViewById(R.id.labelAbsent_cs_attendence);
             rbAbsent = itemView.findViewById(R.id.rbAbsent);
             rbPresent = itemView.findViewById(R.id.rbPresent);
             radioGroupAttendence = itemView.findViewById(R.id.rgAttendance);

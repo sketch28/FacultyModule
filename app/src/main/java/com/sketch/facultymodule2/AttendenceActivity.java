@@ -7,9 +7,12 @@ import android.widget.RadioButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,59 +23,31 @@ import java.util.ArrayList;
 
 public class AttendenceActivity extends AppCompatActivity {
 
-   private RecyclerView recyclerView;
-   private Button btnAllPresent, btnAllAbsent,btnSave;
-    DatabaseReference database,database2;
-    FirebaseDatabase firebaseDatabase;
-    ArrayList<Students> list ;
-    public Students students;
-    AttendenceAdapter attendenceAdapter;
-    RadioButton radioButton1;
+//   private RecyclerView recyclerView;
+//   private Button btnAllPresent, btnAllAbsent,btnSave;
+//    DatabaseReference database,database2;
+//    FirebaseDatabase firebaseDatabase;
+//    ArrayList<Students> list ;
+//    public Students students;
+//    AttendenceAdapter attendenceAdapter;
+//    RadioButton radioButton1;
 
-
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendence);
-        recyclerView = findViewById(R.id.lvStudents);
-        btnSave = findViewById(R.id.btnSaveAttendance);
+        tabLayout = findViewById(R.id.tabLayout_attendence);
+        viewPager = findViewById(R.id.viewPager2_attendence);
 
-        students = new Students();
+        tabLayout.setupWithViewPager(viewPager);
 
-        database = FirebaseDatabase.getInstance().getReference("Students");
-        database2 = FirebaseDatabase.getInstance().getReference("Students Attendence");
+        VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
 
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        vpAdapter.addFragment(new CsAttendenceFragment(),"Computer Science");
+        vpAdapter.addFragment(new ITFragment(),"Info.Tech");
+        viewPager.setAdapter(vpAdapter);
 
-        list = new ArrayList<>();
-
-        attendenceAdapter = new AttendenceAdapter(this,list);
-        recyclerView.setAdapter(attendenceAdapter);
-
-
-        database.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    Students students = dataSnapshot.getValue(Students.class);
-                    list.add(students);
-                }
-
-                attendenceAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
     }
 }
