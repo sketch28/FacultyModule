@@ -49,8 +49,6 @@ public class AddStudentsActivity extends AppCompatActivity {
         rb1batch = (RadioButton) findViewById(R.id.rb_first_batch);
         rb2batch = (RadioButton) findViewById(R.id.rb_second_batch);
 
-
-
         ilName = (TextInputLayout) findViewById(R.id.tLayoutName);
         ilRollno = (TextInputLayout) findViewById(R.id.tLayoutRollNo);
         iledtName = (TextInputEditText) findViewById(R.id.TIedtName);
@@ -112,71 +110,6 @@ public class AddStudentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-//                // When submit button is clicked,
-//                // Ge the Radio Button which is set
-//                // If no Radio Button is set, -1 will be returned
-//                int selectedId = radioGroupDepartment.getCheckedRadioButtonId();
-//                if (selectedId == -1) {
-//                    Toast.makeText(AddStudentsActivity.this,
-//                            "Department not selected",
-//                            Toast.LENGTH_SHORT)
-//                            .show();
-//                } else {
-//
-//                    RadioButton radioButton
-//                            = (RadioButton) radioGroupDepartment
-//                            .findViewById(selectedId);
-//
-//                    // Now display the value of selected item
-//                    // by the Toast message
-//                    Toast.makeText(AddStudentsActivity.this,
-//                            radioButton.getText(),
-//                            Toast.LENGTH_SHORT)
-//                            .show();
-//                }
-//
-//
-//                int selectedId2 = radioGroupYears.getCheckedRadioButtonId();
-//                if (selectedId2 == -1) {
-//                    Toast.makeText(AddStudentsActivity.this,
-//                            "years not  selected",
-//                            Toast.LENGTH_SHORT)
-//                            .show();
-//                } else {
-//
-//                    RadioButton radioButton
-//                            = (RadioButton) radioGroupYears
-//                            .findViewById(selectedId);
-//
-//                    // Now display the value of selected item
-//                    // by the Toast message
-//                    Toast.makeText(AddStudentsActivity.this,
-//                            radioButton.getText(),
-//                            Toast.LENGTH_SHORT)
-//                            .show();
-//                }
-//
-//                int selectedId3 = radioGroupBatches.getCheckedRadioButtonId();
-//                if (selectedId3 == -1) {
-//                    Toast.makeText(AddStudentsActivity.this,
-//                            " batches not  selected",
-//                            Toast.LENGTH_SHORT)
-//                            .show();
-//                } else {
-//
-//                    RadioButton radioButton
-//                            = (RadioButton) radioGroupBatches
-//                            .findViewById(selectedId);
-//
-//                    // Now display the value of selected item
-//                    // by the Toast message
-//                    Toast.makeText(AddStudentsActivity.this,
-//                            radioButton.getText(),
-//                            Toast.LENGTH_SHORT)
-//                            .show();
-//                }
-                //Firebase Coding
                 String D1 = rbCs.getText().toString();
                 String D2 = rbIt.getText().toString();
 
