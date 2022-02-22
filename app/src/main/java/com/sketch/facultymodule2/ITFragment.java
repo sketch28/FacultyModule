@@ -44,143 +44,144 @@ public class ITFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-            btnAddStudents = (Button) getView().findViewById(R.id.add_students_rb_it);
-            btnClear = (Button) getView().findViewById(R.id.btn_clear_rb);
-            radioGroupDepartment = (RadioGroup) getView().findViewById(R.id.gr_Department);
-            radioGroupYears = (RadioGroup) getView().findViewById(R.id.gr_Years);
-            radioGroupBatches = (RadioGroup) getView().findViewById(R.id.gr_batches);
-            //Department
-//        rbCs = (RadioButton) getView().findViewById(R.id.rb_CS);
-            rbIt = (RadioButton) getView().findViewById(R.id.rb_IT);
-            //Years
-            rb1yr = (RadioButton) getView(). findViewById(R.id.rb_first_year);
-            rb2yr = (RadioButton) getView().findViewById(R.id.rb_second_year);
-            rb3yr = (RadioButton)getView(). findViewById(R.id.rb_third_year);
-            rb4yr = (RadioButton) getView().findViewById(R.id.rb_fourth_year);
-            //Batches
-            rb1batch = (RadioButton) getView().findViewById(R.id.rb_first_batch);
-            rb2batch = (RadioButton) getView().findViewById(R.id.rb_second_batch);
 
-            ilName = (TextInputLayout) getView().findViewById(R.id.tLayoutName);
-            ilRollno = (TextInputLayout) getView().findViewById(R.id.tLayoutRollNo);
-            iledtName = (TextInputEditText) getView().findViewById(R.id.TIedtName);
-            iledtRollno = (TextInputEditText) getView().findViewById(R.id.TIedtRollNo);
-            students = new Students();
-            reference = FirebaseDatabase.getInstance().getReference().child("Students_it");
-
-
-            radioGroupDepartment.clearCheck();
-            radioGroupYears.clearCheck();
-            radioGroupBatches.clearCheck();
-
-            // Add the Listener to the RadioGroup
-            radioGroupDepartment.setOnCheckedChangeListener(
-                    new RadioGroup
-                            .OnCheckedChangeListener() {
-                        @Override
-
-                        // The flow will come here when
-                        // any of the radio buttons in the radioGroup
-                        // has been clicked
-
-                        // Check which radio button has been clicked
-                        public void onCheckedChanged(RadioGroup group,
-                                                     int checkedId) {
-
-                            // Get the selected Radio Button
-                            RadioButton
-                                    radioButton
-                                    = (RadioButton) group
-                                    .findViewById(checkedId);
-                        }
-                    });
-
-            radioGroupYears.setOnCheckedChangeListener(
-                    new RadioGroup
-                            .OnCheckedChangeListener() {
-                        @Override
-
-                        // The flow will come here when
-                        // any of the radio buttons in the radioGroup
-                        // has been clicked
-
-                        // Check which radio button has been clicked
-                        public void onCheckedChanged(RadioGroup group,
-                                                     int checkedId) {
-
-                            // Get the selected Radio Button
-                            RadioButton
-                                    radioButton
-                                    = (RadioButton) group
-                                    .findViewById(checkedId);
-                        }
-                    });
-
-            // Add the Listener to the Submit Button
-            btnAddStudents.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-
-                    String D1 = rbCs.getText().toString();
-                    String D2 = rbIt.getText().toString();
-
-                    students.setStudentName(iledtName.getText().toString().trim());
-                    students.setRollNo(iledtRollno.getText().toString().trim());
-
-                    if(rbCs.isChecked()){
-                        students.setDepartment(D1);
-
-
-                    }else{
-                        students.setDepartment(D2);
-                    }
-                    String Y1 = rb1yr.getText().toString();
-                    String Y2= rb2yr.getText().toString();
-                    String Y3= rb3yr.getText().toString();
-                    String Y4= rb4yr.getText().toString();
-                    if(rb1yr.isChecked()){
-                        students.setYears(Y1);
-                    }
-                    else if(rb2yr.isChecked()){
-                        students.setYears(Y2);
-                    }
-                    else if(rb3yr.isChecked()){
-                        students.setYears(Y3);
-                    }else
-                    {
-                        students.setYears(Y4);
-                    }
-                    String B1 = rb1batch.getText().toString();
-                    String B2 = rb2batch.getText().toString();
-                    if(rb1batch.isChecked()){
-                        students.setBatches(B1);
-                    }
-                    else{
-                        students.setBatches(B2);
-                    }
-                    reference.push().setValue(students);
-//                Toast.makeText(AddStudentsActivity.this, "Student Added", Toast.LENGTH_SHORT).show();
-                }
-            });
-            // Add the Listener to the Submit Button
-            btnClear.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-
-                    // Clear RadioGroup
-                    // i.e. reset all the Radio Buttons
-                    radioGroupDepartment.clearCheck();
-                    radioGroupYears.clearCheck();
-                    radioGroupBatches.clearCheck();
-                    iledtName.setText("");
-                    iledtRollno.setText("");
-
-
-                }
-            });
         ITView= inflater.inflate(R.layout.fragment_i_t, container, false);
+        btnAddStudents = (Button) ITView.findViewById(R.id.add_students_rb_it);
+        btnClear = (Button) ITView.findViewById(R.id.btn_clear_rb);
+        radioGroupDepartment = (RadioGroup) ITView.findViewById(R.id.gr_Department);
+        radioGroupYears = (RadioGroup) ITView.findViewById(R.id.gr_Years);
+        radioGroupBatches = (RadioGroup) ITView.findViewById(R.id.gr_batches);
+        //Department
+//        rbCs = (RadioButton) getView().findViewById(R.id.rb_CS);
+        rbIt = (RadioButton) ITView.findViewById(R.id.rb_IT);
+        //Years
+        rb1yr = (RadioButton) ITView. findViewById(R.id.rb_first_year);
+        rb2yr = (RadioButton) ITView.findViewById(R.id.rb_second_year);
+        rb3yr = (RadioButton) ITView. findViewById(R.id.rb_third_year);
+        rb4yr = (RadioButton) ITView.findViewById(R.id.rb_fourth_year);
+        //Batches
+        rb1batch = (RadioButton) ITView.findViewById(R.id.rb_first_batch);
+        rb2batch = (RadioButton) ITView.findViewById(R.id.rb_second_batch);
+
+        ilName = (TextInputLayout) ITView.findViewById(R.id.tLayoutName);
+        ilRollno = (TextInputLayout) ITView.findViewById(R.id.tLayoutRollNo);
+        iledtName = (TextInputEditText) ITView.findViewById(R.id.TIedtName);
+        iledtRollno = (TextInputEditText) ITView.findViewById(R.id.TIedtRollNo);
+        students = new Students();
+        reference = FirebaseDatabase.getInstance().getReference().child("Students_it");
+
+
+        radioGroupDepartment.clearCheck();
+        radioGroupYears.clearCheck();
+        radioGroupBatches.clearCheck();
+
+        // Add the Listener to the RadioGroup
+        radioGroupDepartment.setOnCheckedChangeListener(
+                new RadioGroup
+                        .OnCheckedChangeListener() {
+                    @Override
+
+                    // The flow will come here when
+                    // any of the radio buttons in the radioGroup
+                    // has been clicked
+
+                    // Check which radio button has been clicked
+                    public void onCheckedChanged(RadioGroup group,
+                                                 int checkedId) {
+
+                        // Get the selected Radio Button
+                        RadioButton
+                                radioButton
+                                = (RadioButton) group
+                                .findViewById(checkedId);
+                    }
+                });
+
+        radioGroupYears.setOnCheckedChangeListener(
+                new RadioGroup
+                        .OnCheckedChangeListener() {
+                    @Override
+
+                    // The flow will come here when
+                    // any of the radio buttons in the radioGroup
+                    // has been clicked
+
+                    // Check which radio button has been clicked
+                    public void onCheckedChanged(RadioGroup group,
+                                                 int checkedId) {
+
+                        // Get the selected Radio Button
+                        RadioButton
+                                radioButton
+                                = (RadioButton) group
+                                .findViewById(checkedId);
+                    }
+                });
+
+        // Add the Listener to the Submit Button
+        btnAddStudents.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                String D1 = rbCs.getText().toString();
+                String D2 = rbIt.getText().toString();
+
+                students.setStudentName(iledtName.getText().toString().trim());
+                students.setRollNo(iledtRollno.getText().toString().trim());
+
+                if(rbCs.isChecked()){
+                    students.setDepartment(D1);
+
+
+                }else{
+                    students.setDepartment(D2);
+                }
+                String Y1 = rb1yr.getText().toString();
+                String Y2= rb2yr.getText().toString();
+                String Y3= rb3yr.getText().toString();
+                String Y4= rb4yr.getText().toString();
+                if(rb1yr.isChecked()){
+                    students.setYears(Y1);
+                }
+                else if(rb2yr.isChecked()){
+                    students.setYears(Y2);
+                }
+                else if(rb3yr.isChecked()){
+                    students.setYears(Y3);
+                }else
+                {
+                    students.setYears(Y4);
+                }
+                String B1 = rb1batch.getText().toString();
+                String B2 = rb2batch.getText().toString();
+                if(rb1batch.isChecked()){
+                    students.setBatches(B1);
+                }
+                else{
+                    students.setBatches(B2);
+                }
+                reference.push().setValue(students);
+//                Toast.makeText(AddStudentsActivity.this, "Student Added", Toast.LENGTH_SHORT).show();
+            }
+        });
+        // Add the Listener to the Submit Button
+        btnClear.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                // Clear RadioGroup
+                // i.e. reset all the Radio Buttons
+                radioGroupDepartment.clearCheck();
+                radioGroupYears.clearCheck();
+                radioGroupBatches.clearCheck();
+                iledtName.setText("");
+                iledtRollno.setText("");
+
+
+            }
+        });
         return ITView;
     }
 }

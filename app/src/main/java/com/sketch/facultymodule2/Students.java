@@ -1,6 +1,6 @@
 package com.sketch.facultymodule2;
 
-public class Students {
+public class Students{
     private String StudentName;
     private String RollNo;
     private String Department;
