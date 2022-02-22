@@ -46,7 +46,7 @@ public class AttendenceActivity extends AppCompatActivity {
         VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
 
         vpAdapter.addFragment(new CsAttendenceFragment(),"Computer Science");
-        vpAdapter.addFragment(new ITFragment(),"Info.Tech");
+        vpAdapter.addFragment(new ITAttendenceFragment(),"Info.Tech");
         viewPager.setAdapter(vpAdapter);
 
     }
