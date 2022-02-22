@@ -46,7 +46,7 @@ public class ITFragment extends Fragment {
         radioGroupYears = (RadioGroup) getView().findViewById(R.id.gr_Years);
         radioGroupBatches = (RadioGroup) getView().findViewById(R.id.gr_batches);
         //Department
-        rbCs = (RadioButton) getView().findViewById(R.id.rb_CS);
+//        rbCs = (RadioButton) getView().findViewById(R.id.rb_CS);
         rbIt = (RadioButton) getView().findViewById(R.id.rb_IT);
         //Years
         rb1yr = (RadioButton) getView(). findViewById(R.id.rb_first_year);
